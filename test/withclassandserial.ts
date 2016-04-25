@@ -11,7 +11,7 @@ import CouchObj = require("../index");
 
 
 
-let ClassAndSerial = { _serial: "seffesgsrgr", _class: "cllgr" }
+let ClassAndSerial = { serial: "seffesgsrgr", class: "cllgr" }
 
 let ObjwithConf = new CouchObj(ClassAndSerial);
 
@@ -31,11 +31,11 @@ describe("test new object with class and serial", function() {
     describe("properties", function() {
 
 
-        it("expect _createdAt as number", function() {
-            expect(ObjwithConf).to.have.property("_createdAt").that.is.a("number");
+        it("expect createdAt as number", function() {
+            expect(ObjwithConf).to.have.property("createdAt").that.is.a("number");
         });
-        it("expect _updatedAt as number", function() {
-            expect(ObjwithConf).to.have.property("_updatedAt").that.is.a("number");
+        it("expect updatedAt as number", function() {
+            expect(ObjwithConf).to.have.property("updatedAt").that.is.a("number");
         });
         it("expect _id as string", function() {
             expect(ObjwithConf).to.have.property("_id").that.is.a("string");
@@ -46,11 +46,11 @@ describe("test new object with class and serial", function() {
     describe("corrispondence for object with class and serial", function() {
 
 
-        it("expect that _class is " + ClassAndSerial._class, function() {
-            expect(ObjwithConf).to.have.property("_class").that.equal(ClassAndSerial._class);
+        it("expect that class is " + ClassAndSerial.class, function() {
+            expect(ObjwithConf).to.have.property("class").that.equal(ClassAndSerial.class);
         });
-        it("expect that _serial is " + ClassAndSerial._serial, function() {
-            expect(ObjwithConf).to.have.property("_serial").that.equal(ClassAndSerial._serial);
+        it("expect that serial is " + ClassAndSerial.serial, function() {
+            expect(ObjwithConf).to.have.property("serial").that.equal(ClassAndSerial.serial);
         });
 
 
@@ -63,19 +63,19 @@ describe("test new object with class and serial", function() {
 
         });
 
-        it("expect that first word of _id is _class", function() {
+        it("expect that first word of _id is class", function() {
 
-            expect(ObjwithConf._id.split("_")[0]).that.equal(ClassAndSerial._class);
-
-        });
-        it("expect that second word of _id is _serial", function() {
-
-            expect(ObjwithConf._id.split("_")[1]).that.equal(ClassAndSerial._serial);
+            expect(ObjwithConf._id.split("_")[0]).that.equal(ClassAndSerial.class);
 
         });
-        it("expect that third word of _id is a number equal to _createdAt", function() {
+        it("expect that second word of _id is serial", function() {
 
-            expect(parseInt(ObjwithConf._id.split("_")[2])).that.is.a("number").that.equal(ObjwithConf._createdAt);
+            expect(ObjwithConf._id.split("_")[1]).that.equal(ClassAndSerial.serial);
+
+        });
+        it("expect that third word of _id is a number equal to createdAt", function() {
+
+            expect(parseInt(ObjwithConf._id.split("_")[2])).that.is.a("number").that.equal(ObjwithConf.createdAt);
 
         });
                 it("expect fourth word of _id is an uid", function() {
