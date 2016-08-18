@@ -6,7 +6,7 @@ const expect = chai.expect
 
 import CouchObj from "../index";
 
-const Obj = new CouchObj();
+const Obj = CouchObj();
 
 
 

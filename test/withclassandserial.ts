@@ -10,7 +10,7 @@ import CouchObj from "../index";
 
 const ClassAndSerial = { serial: "seffesgsrgr", class: "cllgr" }
 
-const ObjwithConf = new CouchObj(ClassAndSerial);
+const ObjwithConf = CouchObj(ClassAndSerial);
 
 
 
