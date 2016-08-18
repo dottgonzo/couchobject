@@ -32,7 +32,7 @@ interface Iconf {
 }
 
 
-export default class {
+export default class Obj {
 
 
     _id: string;
