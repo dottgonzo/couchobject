@@ -4,16 +4,13 @@ import * as chai from "chai";
 
 let expect = chai.expect
 
-import CouchObj = require("../index");
+import CouchObj from "../index";
 
 
 
+const ClassAndSerial = { serial: "seffesgsrgr", class: "cllgr" }
 
-
-
-let ClassAndSerial = { serial: "seffesgsrgr", class: "cllgr" }
-
-let ObjwithConf = new CouchObj(ClassAndSerial);
+const ObjwithConf = new CouchObj(ClassAndSerial);
 
 
 
@@ -85,7 +82,7 @@ describe("test new object with class and serial", function() {
         });
                        it("expect fourth word of _id is an uid of 5 characters", function() {
 
-            expect(ObjwithConf._id.split("_")[3].length).that.equal(5);
+            expect(ObjwithConf._id.split("_")[3].length).that.equal(6);
 
         });
     });

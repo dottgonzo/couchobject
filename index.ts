@@ -1,9 +1,9 @@
+const uid: Iuid = require("uid");
+
+
 interface Iuid {
     (n?: number): string
 }
-
-let uid: Iuid = require("uid");
-
 
 interface ICouchobj {
 
@@ -32,7 +32,7 @@ interface Iconf {
 }
 
 
-class Couchobj {
+export default class {
 
 
     _id: string;
@@ -48,7 +48,6 @@ class Couchobj {
     constructor(conf?: Iconf) {
 
         let _id;
-
 
         if (conf && conf.class) {
             this.class = conf.class;
@@ -67,7 +66,6 @@ class Couchobj {
 
         if (conf && conf.apiVersion) this.apiVersion = conf.apiVersion;
 
-
         if (conf && conf.createdAt) {
             this.createdAt = conf.createdAt;
         } else {
@@ -84,29 +82,20 @@ class Couchobj {
 
 
         if (conf && conf._id) {
-
             _id = conf._id
-
         } else {
-
-            _id = _id + uid(5);
-
+            _id = _id + uid(6);
         }
 
         this._id = _id;
        
 
-
         // this.locations = event.locations;
 
-
-
     }
-
-
 
 }
 
 
 
-export = Couchobj
+

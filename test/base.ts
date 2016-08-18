@@ -2,11 +2,11 @@ import * as mocha from "mocha";
 import * as chai from "chai";
 
 
-let expect = chai.expect
+const expect = chai.expect
 
-import CouchObj = require("../index");
+import CouchObj from "../index";
 
-let Obj = new CouchObj();
+const Obj = new CouchObj();
 
 
 
@@ -64,7 +64,7 @@ describe("test new object with no conf", function() {
         });
                        it("expect fourth word of _id is an uid of 5 characters", function() {
 
-            expect(Obj._id.split("_")[3].length).that.equal(5);
+            expect(Obj._id.split("_")[3].length).that.equal(6);
 
         });
     });
